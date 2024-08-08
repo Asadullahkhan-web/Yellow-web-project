@@ -1,0 +1,1011 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            margin-top: auto;
+        }
+
+
+        .container {
+            background-color: #f8f9fa;
+            width: 100%;
+
+        }
+
+        .section1 {
+
+            width: 100%;
+            height: 75vh;
+            background-color: #ffcd00;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+
+        }
+
+        .nav-bar {
+            top: 0;
+            width: 100%;
+            display: flex;
+            position: fixed;
+            align-items: center;
+            height: 10vh;
+            background-color: #ffcd00;
+            justify-content: space-around;
+            z-index: 213123123;
+
+
+        }
+
+        .nav-span {
+            display: flex;
+        }
+
+        img {
+            display: flex;
+            width: 50px;
+            height: 50px;
+            /* border-radius: 50px; */
+        }
+
+        .menu {
+            display: flex;
+            gap: 10px;
+            justify-content: space-around;
+            align-items: center;
+            text-align: center;
+            object-fit: cover;
+        }
+
+        .item {
+            display: flex;
+
+        }
+
+        .links {
+            text-decoration: none;
+            display: flex;
+            padding: 5px 10px;
+            font-size: 20px;
+            color: black;
+            font-weight: bold;
+        }
+
+        .links:hover {
+            direction: initial;
+            text-decoration: underline;
+        }
+
+        .Button {
+            font-weight: bold;
+            display: flex;
+            padding: 10px 35px;
+            font-size: 20px;
+            border-radius: 25px;
+            background-color: #ffcd00;
+        }
+
+        .Button:hover {
+            box-shadow: 0 12px 16px 0 rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            background-color: #ffcd00;
+        }
+
+        .search-header {
+            margin-top: 20%;
+            font-size: 55px;
+            text-align: center;
+            font-weight: bold;
+            color: #000000;
+
+        }
+
+        .Bar {
+            /* box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24),0 17px 50px 0 rgba(0,0,0,0.19); */
+            width: 65%;
+            margin: 0 auto;
+            text-align: center;
+        }
+
+        .search-bar {
+            box-shadow: 0px 10px 10px 0px rgba(0, 0, 0, 0.24), 0 17px 50px 0 rgba(0, 0, 0, 0.19);
+            border: white 2px solid;
+            width: 100%;
+            height: 75px;
+            background-color: #FFF;
+            border-radius: 5px;
+            display: flex;
+            align-items: center;
+            padding: 0 20px;
+            margin-top: 50px;
+        }
+
+        .search-bar input {
+            width: 100%;
+            height: 30px;
+            
+            padding: 0 10px;
+            font-size: 16px;
+        }
+
+        input{
+            border: none !important;
+        }
+
+         
+
+
+        
+
+        .search-bar .Button1 {
+            background-color: #ffffff;
+            border: none;
+            border-radius: 40%;
+            padding: 10px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .search-bar .Button2 {
+            background-color: #ffcd00;
+            border: none;
+            border-radius: 10%;
+            padding: 3px;
+            margin-left: 20px;
+            cursor: pointer;
+        }
+
+        .location-icon {
+            margin-right: 20px;
+
+        }
+
+        .card-container {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            /* margin-top:100px; */
+        }
+
+        .card {
+            width: 400px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.2);
+            margin: 20px;
+            position: relative;
+        }
+
+        .card img {
+            width: 400px;
+            height: auto;
+        }
+
+        .card img:hover {
+            transform: scale(1.2);
+        }
+
+        .featured {
+            background-color: #ffcd00;
+            color: #000000;
+            padding: 5px 10px;
+            border-radius: 5px;
+            position: absolute;
+            top: 25px;
+            right: 25px;
+            z-index: 1;
+        }
+
+        .icon {
+            position: absolute;
+            top: 20px;
+            left: 25px;
+            z-index: 1;
+        }
+
+        .icon img {
+            width: 40px;
+            height: 0%;
+        }
+
+        .para {
+            color: #000000;
+        }
+
+        .review {
+            position: absolute;
+            bottom: 235px;
+            left: 25px;
+            z-index: 1;
+        }
+
+        .card-content {
+            padding: 16px;
+        }
+
+        .card-content img {
+            width: 17px;
+            height: 0%;
+        }
+
+        .div {
+            justify-content: space-between;
+            display: flex;
+        }
+
+        .div img {
+            width: 17px;
+            height: 0%;
+        }
+
+        .card .buttons {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 10px;
+        }
+
+        .card .buttons button {
+            border: none;
+            display: flex;
+            color: white;
+            justify-content: space-between;
+            background-color: #eb0d0d;
+            border-radius: 5px;
+            padding: 8px 15px;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+
+        .card .buttons button:hover {
+            background-color: #f40f0f;
+            color: #000000;
+        }
+
+        h3 {
+            /* text-align: center; */
+            margin-top: 20px;
+        }
+
+        h2 {
+            text-align: center;
+            margin-top: 10px;
+        }
+
+        p {
+            color: #797878;
+        }
+
+
+        .hot-container {
+            background-color: white;
+            width: 100%;
+            margin: 20px auto;
+            text-align: center;
+            cursor: pointer;
+        }
+
+        h2 {
+            color: #333;
+        }
+
+        p {
+            color: #555;
+        }
+
+        .search-item {
+            position: relative;
+            display: inline-block;
+            margin: 25px;
+            padding: 10px 70px;
+            border-radius: 50px;
+            background-color: #fff;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            border: 2px solid #ffcd00;
+            color: #333;
+            cursor: pointer;
+        }
+
+        .search-item:hover {
+            background-color: #ffcd00;
+
+        }
+
+        .search-item span {
+            position: absolute;
+            top: -2px;
+            bottom: -20px;
+            right: -20px;
+            height: 45px;
+            width: 55px;
+            background-color: #ffcd00;
+            border-radius: 50% 35% 35% 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-size: 0.85em;
+            font-weight: bold;
+        }
+
+
+
+
+
+        .footer {
+
+            display: flex;
+            justify-content: space-around;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border: none;
+        }
+
+        .column {
+
+            display: flex;
+            flex-direction: column;
+        }
+
+        .column h2 {
+            display: flex;
+            margin-top: 0;
+            margin-bottom: 20px;
+        }
+
+        .column a {
+            text-decoration: none;
+            color: black;
+            margin-bottom: 20px;
+        }
+
+        .column a:hover {
+            text-decoration: underline;
+        }
+
+        .footer-pic {
+
+            text-align: center;
+            color: #797878;
+        }
+
+        .Cover {
+            object-fit: cover;
+            padding: 5px;
+            display: flex;
+            /* width: auto;
+            height: auto; */
+
+
+        }
+
+
+        .logo-cover{
+            display: flex;
+            gap: 5px;
+            /* justify-content: center; */
+            align-items: center;
+        }
+
+        .logo-cover img{
+            border-radius: 50%;
+            height: 50px;
+            width: 50px;
+        }
+
+
+        .Blog {
+            background-color: #f8f9fa;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            height: 500px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class=container>
+        <div class="section1">
+            <nav class="nav-bar">
+                <span class="nav-span"> <img src="pngegg (2).png" alt="">
+                    <h1>Yellow Pages <p style="font-size: 15px;">Türkiye'nin Firma Rehberi</p>
+                    </h1>
+                </span>
+                <ul class="menu">
+                    <li class="item"><a href="" class="links">Grouw your Business</a></li>
+                    <li class="item"><a href="" class="links">Blog</a></li>
+                    <li class="item"><a href="" class="links">Login/Register</a></li>
+                    <li class="item"><button class="Button">+ Add listing</button></li>
+                </ul>
+            </nav>
+
+            <div class="Bar">
+                <div class="search-header">
+                    Search in Turkey's Largest Business Directory
+                </div>
+
+                <div class="search-bar">
+                    <i class="fas fa-search"></i>
+                    &#128269;
+                    <input type="text" placeholder="What are you looking for" >
+                    <div class="location-icon">
+                        <i class="fas fa-map-marker-alt"></i>
+                    </div>
+                    <span style="font-size: 30px;">&VerticalLine;</span>
+                    <button class="Button1">
+                        <img src="L.png" style="width: 35px;
+                        height: 35px;background-color: rgb(255, 255, 255);" alt="">
+                        <i class="fas fa-search"></i>
+                    </button>
+                    <input type="text" placeholder="Location">
+                    <button class="Button2">
+                        <img src="S.png" style="width: 40px; height: 40px;" alt="">
+                        <i class="fas fa-search"></i>
+                    </button>
+                </div>
+            </div>
+
+        </div>
+
+
+
+
+        <div>
+            <h2>Newest Arrivals
+
+            </h2>
+            <h3 style="text-align: center;color: #797878;">Check Out the Most Recent Listings
+
+            </h3>
+
+            <div class="card-container">
+                <div class="card">
+                    <img src="img4.jpg">
+                    <div class="featured">Featured</div>
+                    <div class="icon"><img src="chef.jpg"></div>
+                    <div class="review">
+                        <p style="color: rgb(0, 0, 0); font-weight: bold;" class="para"><span
+                                style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p>
+                    </div>
+                    <div class="card-content">
+                        <h3 style="color: #f40f0f;">Liman Istanbul Restorant</h3>
+                        <p>Popular restaurant in california</p>
+
+                        <div class="buttons">
+                            <p style="margin-left: 5px; display: flex;"><img src="phone img.jpg" alt=""> +98 (265) 3652
+                                - 05</p>
+                            <button style="margin-right: 5px;">Close</button>
+                        </div><br>
+                        <hr>
+                        <div class="buttons">
+                            <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img
+                                    src="pngwing.com (5).png" alt="">California, USA</p>
+                            <span style="font-size: 30px;  color: red;margin-right: 5px;">♡ <span
+                                    style="color: #797878; font-size: 20px;margin-right: 5px;">Save</span>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="img4.jpg">
+                    <div class="featured">Featured</div>
+                    <div class="icon"><img src="chef.jpg"></div>
+                    <div class="review">
+                        <p style="color: rgb(0, 0, 0); font-weight: bold;" class="para"><span
+                                style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p>
+                    </div>
+                    <div class="card-content">
+                        <h3>Liman Istanbul Restorant</h3>
+                        <p>Popular restaurant in california</p>
+
+                        <div class="buttons">
+                            <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img src="phone img.jpg"
+                                    alt=""> +98 (265) 3652 - 05</p>
+                            <button style="margin-right: 5px;">Close</button>
+                        </div><br>
+                        <hr>
+                        <div class="buttons">
+                            <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img
+                                    src="pngwing.com (5).png" alt="">California, USA</p>
+                            <span style="font-size: 30px;  color: red;margin-right: 5px;">♡ <span
+                                    style="color: #797878; font-size: 20px;margin-right: 5px;">Save</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card">
+                    <img src="img4.jpg">
+                    <div class="featured">Featured</div>
+                    <div class="icon"><img src="chef.jpg"></div>
+                    <div class="review">
+                        <p style="color: rgb(0, 0, 0); font-weight: bold;" class="para"><span
+                                style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p>
+                    </div>
+                    <div class="card-content">
+                        <h3>Liman Istanbul Restorant</h3>
+                        <p>Popular restaurant in california</p>
+                        <div class="buttons">
+                            <p style="margin-left: 5px; display: flex;"><img src="phone img.jpg" alt=""> +98 (265) 3652
+                                - 05</p>
+                            <button style="margin-right: 5px;">Close</button>
+                        </div><br>
+                        <hr>
+                        <div class="buttons">
+                            <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img
+                                    src="pngwing.com (5).png" alt="">California, USA</p>
+                            <span style="font-size: 30px;  color: red;margin-right: 5px;">♡ <span
+                                    style="color: #797878; font-size: 20px;margin-right: 5px;">Save</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+
+            <div class="card-container">
+                <div class="card">
+                    <img src="1.jpeg">
+                    <div class="featured">Featured</div>
+                    <div class="icon"><img src="chef.jpg"></div>
+                    <div class="review">
+                        <p style="color: white; font-weight: bold;" class="para"><span
+                                style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p>
+                    </div>
+                    <div class="card-content">
+                        <h3>Liman Istanbul Restorant</h3>
+                        <p>Popular restaurant in california</p>
+
+                        <div class="buttons">
+                            <p style="margin-left: 5px; display: flex;"><img src="phone img.jpg" alt=""> +98 (265) 3652
+                                - 05</p>
+                            <button style="margin-right: 5px;">Close</button>
+                        </div><br>
+                        <hr>
+                        <div class="buttons">
+                            <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img
+                                    src="pngwing.com (5).png" alt="">California, USA</p>
+                            <span style="font-size: 30px;  color: red;margin-right: 5px;">♡ <span
+                                    style="color: #797878; font-size: 20px;margin-right: 5px;">Save</span>
+                        </div>
+
+
+                    </div>
+                </div>
+                <div class="card">
+                    <img src="1.jpeg" .jpg>
+                    <div class="featured">Featured</div>
+                    <div class="icon"><img src="chef.jpg"></div>
+                    <div class="review">
+                        <p style="color: white; font-weight: bold;" class="para"><span
+                                style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p>
+                    </div>
+                    <div class="card-content">
+                        <h3>Liman Istanbul Restorant</h3>
+                        <p>Popular restaurant in california</p>
+
+                        <div class="buttons">
+                            <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img src="phone img.jpg"
+                                    alt=""> +98 (265) 3652 - 05</p>
+                            <button style="margin-right: 5px;">Close</button>
+                        </div><br>
+                        <hr>
+                        <div class="buttons">
+                            <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img
+                                    src="pngwing.com (5).png" alt="">California, USA</p>
+                            <span style="font-size: 30px;  color: red;margin-right: 5px;">♡ <span
+                                    style="color: #797878; font-size: 20px;margin-right: 5px;">Save</span>
+                        </div>
+                    </div>
+
+                </div>
+                <div class="card">
+                    <img src="1.jpeg">
+                    <div class="featured">Featured</div>
+                    <div class="icon"><img src="chef.jpg"></div>
+                    <div class="review">
+                        <p style="color: white; font-weight: bold;" class="para"><span
+                                style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p>
+                    </div>
+                    <div class="card-content">
+                        <h3>Liman Istanbul Restorant</h3>
+                        <p>Popular restaurant in california</p>
+                        <div class="buttons">
+                            <p style="margin-left: 5px; display: flex;"><img src="phone img.jpg" alt=""> +98 (265) 3652
+                                - 05</p>
+                            <button style="margin-right: 5px;">Close</button>
+                        </div><br>
+                        <hr>
+                        <div class="buttons">
+                            <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img
+                                    src="pngwing.com (5).png" alt="">California, USA</p>
+                            <span style="font-size: 30px;  color: red;margin-right: 5px;">♡ <span
+                                    style="color: #797878; font-size: 20px;margin-right: 5px;">Save</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+
+        <div class="hot-container">
+            <h2>Hot Searches</h2>
+            <p>Explore Popular Search Interests</p>
+
+            <div class="search-item">
+
+                Lorem ipsum dolor sit amet consectetur .<span> 56.2k</span>
+            </div>
+            <div class="search-item">
+                Lorem ipsum dolor sit amet consectetur . <span> 56.2k</span>
+            </div>
+            <div class="search-item">
+                Lorem ipsum dolor sit amet consectetur . <span> 56.2k</span>
+            </div>
+            <div class="search-item">
+                Lorem ipsum dolor sit amet consectetur . <span> 56.2k</span>
+            </div>
+            <div class="search-item">
+                Lorem ipsum dolor sit amet consectetur . <span> 56.2k</span>
+            </div>
+            <div class="search-item">
+                Lorem ipsum dolor sit amet consectetur . <span> 56.2k</span>
+            </div>
+            <div class="search-item">
+                Lorem ipsum dolor sit amet consectetur . <span> 56.2k</span>
+            </div>
+            <div class="search-item">
+                Lorem ipsum dolor sit amet consectetur . <span> 56.2k</span>
+            </div>
+            <div class="search-item">
+                Lorem ipsum dolor sit amet consectetur. <span> 56.2k</span>
+            </div>
+
+        </div>
+    </div>
+
+
+
+
+
+    <div style="background-color: #f8f9fa;">
+        <h2 style="font-weight: bold;">Newest Arrivals
+
+        </h2>
+        <h3 style="text-align: center;color: #797878;">Check Out the Most Recent Listings
+
+        </h3>
+    </div>
+
+    <div class="card-container">
+        <div class="card">
+            <img src="img4.jpg">
+            <div class="featured">Featured</div>
+            <div class="icon"><img src="chef.jpg"></div>
+            <div class="review">
+                <p style="color: rgb(0, 0, 0); font-weight: bold;" class="para"><span
+                        style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p>
+            </div>
+            <div class="card-content">
+                <h3 style="color: #f40f0f;">Liman Istanbul Restorant</h3>
+                <p>Popular restaurant in california</p>
+
+                <div class="buttons">
+                    <p style="margin-left: 5px; display: flex;"><img src="phone img.jpg" alt=""> +98 (265) 3652 - 05</p>
+                    <button style="margin-right: 5px;">Close</button>
+                </div><br>
+                <hr>
+                <div class="buttons">
+                    <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img src="pngwing.com (5).png"
+                            alt="">California, USA</p>
+                    <span style="font-size: 30px;  color: red;margin-right: 5px;">♡ <span
+                            style="color: #797878; font-size: 20px;margin-right: 5px;">Save</span>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="card">
+            <img src="img4.jpg">
+            <div class="featured">Featured</div>
+            <div class="icon"><img src="chef.jpg"></div>
+            <div class="review">
+                <p style="color: rgb(0, 0, 0); font-weight: bold;" class="para"><span
+                        style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p>
+            </div>
+            <div class="card-content">
+                <h3>Liman Istanbul Restorant</h3>
+                <p>Popular restaurant in california</p>
+
+                <div class="buttons">
+                    <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img src="phone img.jpg" alt=""> +98
+                        (265) 3652 - 05</p>
+                    <button style="margin-right: 5px;">Close</button>
+                </div><br>
+                <hr>
+                <div class="buttons">
+                    <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img src="pngwing.com (5).png"
+                            alt="">California, USA</p>
+                    <span style="font-size: 30px;  color: red;margin-right: 5px;">♡ <span
+                            style="color: #797878; font-size: 20px;margin-right: 5px;">Save</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="card">
+            <img src="img4.jpg">
+            <div class="featured">Featured</div>
+            <div class="icon"><img src="chef.jpg"></div>
+            <div class="review">
+                <p style="color: rgb(0, 0, 0); font-weight: bold;" class="para"><span
+                        style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p>
+            </div>
+            <div class="card-content">
+                <h3>Liman Istanbul Restorant</h3>
+                <p>Popular restaurant in california</p>
+                <div class="buttons">
+                    <p style="margin-left: 5px; display: flex;"><img src="phone img.jpg" alt=""> +98 (265) 3652 - 05</p>
+                    <button style="margin-right: 5px;">Close</button>
+                </div><br>
+                <hr>
+                <div class="buttons">
+                    <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img src="pngwing.com (5).png"
+                            alt="">California, USA</p>
+                    <span style="font-size: 30px;  color: red;margin-right: 5px;">♡ <span
+                            style="color: #797878; font-size: 20px;margin-right: 5px;">Save</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+    <div class="card-container">
+        <div class="card">
+            <img src="1.jpeg">
+            <div class="featured">Featured</div>
+            <div class="icon"><img src="chef.jpg"></div>
+            <div class="review">
+                <p style="color: white; font-weight: bold;" class="para"><span
+                        style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p>
+            </div>
+            <div class="card-content">
+                <h3>Liman Istanbul Restorant</h3>
+                <p>Popular restaurant in california</p>
+
+                <div class="buttons">
+                    <p style="margin-left: 5px; display: flex;"><img src="phone img.jpg" alt=""> +98 (265) 3652 - 05</p>
+                    <button style="margin-right: 5px;">Close</button>
+                </div><br>
+                <hr>
+                <div class="buttons">
+                    <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img src="pngwing.com (5).png"
+                            alt="">California, USA</p>
+                    <span style="font-size: 30px;  color: red;margin-right: 5px;">♡ <span
+                            style="color: #797878; font-size: 20px;margin-right: 5px;">Save</span>
+                </div>
+
+
+            </div>
+        </div>
+        <div class="card">
+            <img src="1.jpeg" .jpg>
+            <div class="featured">Featured</div>
+            <div class="icon"><img src="chef.jpg"></div>
+            <div class="review">
+                <p style="color: white; font-weight: bold;" class="para"><span
+                        style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p>
+            </div>
+            <div class="card-content">
+                <h3>Liman Istanbul Restorant</h3>
+                <p>Popular restaurant in california</p>
+
+                <div class="buttons">
+                    <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img src="phone img.jpg" alt=""> +98
+                        (265) 3652 - 05</p>
+                    <button style="margin-right: 5px;">Close</button>
+                </div><br>
+                <hr>
+                <div class="buttons">
+                    <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img src="pngwing.com (5).png"
+                            alt="">California, USA</p>
+                    <span style="font-size: 30px;  color: red;margin-right: 5px;">♡ <span
+                            style="color: #797878; font-size: 20px;margin-right: 5px;">Save</span>
+                </div>
+            </div>
+
+        </div>
+        <div class="card">
+            <img src="1.jpeg">
+            <div class="featured">Featured</div>
+            <div class="icon"><img src="chef.jpg"></div>
+            <div class="review">
+                <p style="color: white; font-weight: bold;" class="para"><span
+                        style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p>
+            </div>
+            <div class="card-content">
+                <h3>Liman Istanbul Restorant</h3>
+                <p>Popular restaurant in california</p>
+                <div class="buttons">
+                    <p style="margin-left: 5px; display: flex;"><img src="phone img.jpg" alt=""> +98 (265) 3652 - 05</p>
+                    <button style="margin-right: 5px;">Close</button>
+                </div><br>
+                <hr>
+                <div class="buttons">
+                    <p style="margin-left: 5px; margin-bottom: 2px; display: flex;"><img src="pngwing.com (5).png"
+                            alt="">California, USA</p>
+                    <span style="font-size: 30px;  color: red;margin-right: 5px;">♡ <span
+                            style="color: #797878; font-size: 20px;margin-right: 5px;">Save</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+
+
+    <div style="background-color: white; margin-top: -5px;">
+
+
+        <h2 style="font-weight: bold;">Blog Corner
+
+        </h2>
+        <h3 style="text-align: center;color: #797878;"> Stay Informed with Our Latest Updates
+
+
+        </h3>
+    </div>
+
+    <div class="Blog" style="background-color: white;">
+        <div class="card">
+            <img src="1.jpeg">
+            <div class="featured">Featured</div>
+            <div class="icon"><img src="chef.jpg"></div>
+            <!-- <div class="review"><p style="color: white; font-weight: bold;"class="para"><span style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p></div> -->
+            <div class="card-content">
+                <h3> <button
+                        style="color: white; margin-bottom: 10px; background-color: rgb(236, 47, 82); border: none; font-size: 15px; padding: 5px 10px; border-radius: 5px">Technology
+                    </button></h3>
+                <p style="font-weight: bold; font-size: 25px; color: #000000;">The Impact of Technology on the
+                    Workplace: How Technology is Changing</p>
+                <div class="logo-cover">
+                    <img src="p.jpg" alt="">
+                    <p> Tracey Wilson August 20, 2022</p>
+
+
+                </div>
+            </div>
+
+
+        </div>
+        <div class="card">
+            <img src="1.jpeg" .jpg>
+            <div class="featured">Featured</div>
+            <div class="icon"><img src="chef.jpg"></div>
+
+            <div class="card-content">
+                <h3> <button
+                        style="color: white; margin-bottom: 10px; background-color: rgb(236, 47, 82); border: none; font-size: 15px; padding: 5px 10px; border-radius: 5px">Technology
+                    </button></h3>
+                <p style="font-weight: bold; font-size: 25px; color: #000000;">The Impact of Technology on the
+                    Workplace: How Technology is Changing</p>
+                <div class="logo-cover">
+                    <img src="p.jpg" alt="">
+                    <p> Tracey Wilson August 20, 2022</p>
+
+
+                </div>
+            </div>
+
+        </div>
+
+
+        <div class="card">
+            <img src="1.jpeg">
+            <div class="featured">Featured</div>
+            <div class="icon"><img src="chef.jpg"></div>
+            <!-- <div class="review"><p style="color: white; font-weight: bold;" class="para"><span style="color: red;">&star;&star;&star;&star;</span>(&star;02 Reviews)</p></div> -->
+            <div class="card-content">
+                <h3> <button
+                        style="color: white; margin-bottom: 10px; background-color: rgb(236, 47, 82); border: none; font-size: 15px; padding: 5px 10px; border-radius: 5px">Technology
+                    </button></h3>
+                <p style="font-weight: bold; font-size: 25px; color: #000000;">The Impact of Technology on the
+                    Workplace: How Technology is Changing</p><b></b>
+                <div class="logo-cover">
+                    <img src="p.jpg" alt="">
+                    <p> Tracey Wilson August 20, 2022</p>
+                </div>
+
+
+
+            </div>
+
+
+        </div>
+    </div>
+    <br>
+
+
+
+
+
+
+
+
+
+
+
+    <div class="footer">
+        <div class="column">
+            <h2>Popular Categories</h2>
+            <a href="#">Restaurant</a>
+            <a href="#">Clothing</a>
+            <a href="#">Mobile Phones</a>
+            <a href="#">Health Sector</a>
+            <a href="#">Travel and Tourism</a>
+            <a href="#">Automobiles</a>
+        </div>
+        <div class="column">
+            <h2>Popular Locations</h2>
+            <a href="#">Istanbul</a>
+            <a href="#">Ankara</a>
+            <a href="#">Izmir</a>
+            <a href="#">Bursa</a>
+            <a href="#">Antalya</a>
+            <a href="#">Konya</a>
+        </div>
+        <div class="column">
+            <h2>About</h2>
+            <a href="#">About Us</a>
+            <a href="#">Advertise with Us</a>
+            <a href="#">Become a Partner</a>
+        </div>
+        <div class="column">
+            <h2>Site Directory</h2>
+            <a href="#">Articles</a>
+            <a href="#">Find a Business</a>
+            <a href="#">White Pages</a>
+            <a href="#">Mobile Apps</a>
+            <a href="#">Reverse Phone Lookup</a>
+            <a href="#">Site Map</a>
+            <a href="#">Browse Restaurants</a>
+        </div>
+        <br>
+
+    </div>
+
+
+
+    <!-- footer img -->
+    <div class="footer-pic">
+        <img src="fo.png" style="width: 100%;height: 50vh; border: none;">
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+    </div>
+
+</body>
+
+</html>
